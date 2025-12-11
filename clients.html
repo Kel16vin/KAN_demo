@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clients & Contact | KAN Innovative Solutions</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { navy: '#1e1b4b', orange: '#ff6b35', yellow: '#ffb400' }, fontFamily: { sans: ['Inter', 'system-ui'] } } } }
@@ -312,8 +316,13 @@
 
 
   <main class="pt-24">
-    <section class="py-24 pb-20 text-center bg-gradient-to-br from-navy to-purple-900 text-white">
-      <h1 class="text-6xl md:text-8xl font-black mb-6 font-serif" data-aos>Trusted by Leading Institutions</h1>
+    <section
+      class="py-24 pb-20 text-center bg-gradient-to-br from-navy to-purple-900 text-white relative overflow-hidden">
+      <img src="assets/img/circ.png" alt="Circuit Pattern"
+        class="absolute inset-0 w-full h-full object-cover opacity-40">
+      <div class="relative z-10">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 font-serif" data-aos>Trusted by Leading Institutions</h1>
+      </div>
     </section>
 
     <section class="py-20">

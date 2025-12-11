@@ -1,196 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KAN Demo – Plain CSS/JS Menu</title>
-    <style>
-      :root {
-        --brand: #0ea5e9; /* swap to your brand */
-        --brand-rgb: 14, 165, 233; /* 0ea5e9 in RGB */
-        --text: #111827;
-        --muted: #6b7280;
-        --surface: #ffffff;
-        --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KAN Demo – Plain CSS/JS Menu</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
+  <style>
+    :root {
+      --brand: #0ea5e9;
+      /* swap to your brand */
+      --brand-rgb: 14, 165, 233;
+      /* 0ea5e9 in RGB */
+      --text: #111827;
+      --muted: #6b7280;
+      --surface: #ffffff;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+        "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      color: var(--text);
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header layout */
+    .site-header {
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(6px);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .brand span {
+      font-weight: 600;
+    }
+
+    /* Desktop nav is hidden <768px, shows at >=768px */
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .desktop-nav a {
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--brand);
+    }
+
+    /* Hamburger shows <768px, hides at >=768px */
+    .hamburger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .hamburger:focus {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    .hamburger:hover {
+      background: #f3f4f6;
+    }
+
+    /* Mobile panel */
+    .mobile-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(var(--brand-rgb), 0.5);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+    }
+
+    /* Glass fallback */
+    @supports (backdrop-filter: blur(4px)) {
+      .mobile-panel {
+        backdrop-filter: blur(4px);
+      }
+    }
+
+    @supports not (backdrop-filter: blur(4px)) {
+      .mobile-panel {
+        background: var(--brand);
+      }
+    }
+
+    /* Animation: fade + slide */
+    .mobile-panel {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 200ms;
+    }
+
+    .mobile-panel.is-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 200ms ease-out, transform 200ms ease-out;
+    }
+
+    .mobile-nav {
+      padding: 0.75rem 1rem;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:focus {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Responsive rules */
+    @media (min-width: 768px) {
+      .desktop-nav {
+        display: flex;
       }
 
-      * { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; font-family: var(--font); color: var(--text); }
-      body.no-scroll { overflow: hidden; }
-
-      .container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
-
-      /* Header layout */
-      .site-header { position: relative; background: rgba(255,255,255,0.8); border-bottom: 1px solid #e5e7eb; backdrop-filter: blur(6px); }
-      .header-row { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
-      .brand { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-      .brand img { height: 2rem; width: 2rem; }
-      .brand span { font-weight: 600; }
-
-      /* Desktop nav is hidden <768px, shows at >=768px */
-      .desktop-nav { display: none; align-items: center; gap: 1.25rem; }
-      .desktop-nav a { color: #374151; text-decoration: none; }
-      .desktop-nav a:hover { color: var(--brand); }
-
-      /* Hamburger shows <768px, hides at >=768px */
-      .hamburger { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; border-radius: 0.375rem; border: none; background: transparent; cursor: pointer; }
-      .hamburger:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
-      .hamburger:hover { background: #f3f4f6; }
-
-      /* Mobile panel */
-      .mobile-panel { position: absolute; top: 100%; left: 0; width: 100%; background: rgba(var(--brand-rgb), 0.5); box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 10; }
-      /* Glass fallback */
-      @supports (backdrop-filter: blur(4px)) {
-        .mobile-panel { backdrop-filter: blur(4px); }
-      }
-      @supports not (backdrop-filter: blur(4px)) {
-        .mobile-panel { background: var(--brand); }
+      .hamburger {
+        display: none;
       }
 
-      /* Animation: fade + slide */
-      .mobile-panel { visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 200ms; }
-      .mobile-panel.is-open { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 200ms ease-out, transform 200ms ease-out; }
-
-      .mobile-nav { padding: 0.75rem 1rem; }
-      .mobile-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-      .mobile-nav a { display: block; padding: 0.5rem 0.75rem; border-radius: 0.375rem; color: var(--text); text-decoration: none; }
-      .mobile-nav a:hover, .mobile-nav a:focus { background: rgba(255,255,255,0.6); }
-
-      /* Responsive rules */
-      @media (min-width: 768px) {
-        .desktop-nav { display: flex; }
-        .hamburger { display: none; }
-        .mobile-panel { display: none; }
+      .mobile-panel {
+        display: none;
       }
+    }
 
-      main { padding: 2.5rem 1rem; }
-      .muted { color: var(--muted); }
-    </style>
-  </head>
-  <body>
-    <header id="plain-header" class="site-header">
-      <div class="container">
-        <div class="header-row">
-          <a class="brand" href="index.html">
-            <img src="assets/img/logo2.png" alt="KAN" />
-            <span>KAN Demo</span>
-          </a>
+    main {
+      padding: 2.5rem 1rem;
+    }
 
-          <nav class="desktop-nav" aria-label="Primary">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="products.html">Products</a>
-            <a href="clients.html">Clients</a>
-            <a href="solutions.html">Solutions</a>
-          </nav>
+    .muted {
+      color: var(--muted);
+    }
+  </style>
+</head>
 
-          <button
-            id="mobile-menu-button"
-            class="hamburger"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-            aria-label="Open menu"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
+<body>
+  <header id="plain-header" class="site-header">
+    <div class="container">
+      <div class="header-row">
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo2.png" alt="KAN" />
+          <span>KAN Demo</span>
+        </a>
 
-      <div id="mobile-menu" class="mobile-panel" role="menu" aria-hidden="true">
-        <nav class="mobile-nav">
-          <ul>
-            <li><a href="index.html" role="menuitem" tabindex="-1">Home</a></li>
-            <li><a href="about.html" role="menuitem" tabindex="-1">About</a></li>
-            <li><a href="services.html" role="menuitem" tabindex="-1">Services</a></li>
-            <li><a href="products.html" role="menuitem" tabindex="-1">Products</a></li>
-            <li><a href="clients.html" role="menuitem" tabindex="-1">Clients</a></li>
-            <li><a href="solutions.html" role="menuitem" tabindex="-1">Solutions</a></li>
-          </ul>
+        <nav class="desktop-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="products.html">Products</a>
+          <a href="clients.html">Clients</a>
+          <a href="solutions.html">Solutions</a>
         </nav>
+
+        <button id="mobile-menu-button" class="hamburger" aria-controls="mobile-menu" aria-expanded="false"
+          aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-    </header>
+    </div>
 
-    <main class="container">
-      <h1>Plain CSS/JS Mobile Menu</h1>
-      <p class="muted">Resize to mobile to try the hamburger menu.</p>
-    </main>
+    <div id="mobile-menu" class="mobile-panel" role="menu" aria-hidden="true">
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html" role="menuitem" tabindex="-1">Home</a></li>
+          <li><a href="about.html" role="menuitem" tabindex="-1">About</a></li>
+          <li><a href="services.html" role="menuitem" tabindex="-1">Services</a></li>
+          <li><a href="products.html" role="menuitem" tabindex="-1">Products</a></li>
+          <li><a href="clients.html" role="menuitem" tabindex="-1">Clients</a></li>
+          <li><a href="solutions.html" role="menuitem" tabindex="-1">Solutions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <script>
-      (function() {
-        const btn = document.getElementById('mobile-menu-button');
-        const panel = document.getElementById('mobile-menu');
-        const header = document.getElementById('plain-header');
-        let isOpen = false;
+  <main class="container">
+    <h1>Plain CSS/JS Mobile Menu</h1>
+    <p class="muted">Resize to mobile to try the hamburger menu.</p>
+  </main>
 
-        const getItems = () => panel.querySelectorAll('[role="menuitem"]');
+  <script>
+    (function () {
+      const btn = document.getElementById('mobile-menu-button');
+      const panel = document.getElementById('mobile-menu');
+      const header = document.getElementById('plain-header');
+      let isOpen = false;
 
-        function openMenu() {
-          if (isOpen) return;
-          panel.classList.add('is-open');
-          btn.setAttribute('aria-expanded', 'true');
-          panel.setAttribute('aria-hidden', 'false');
-          const items = getItems();
-          if (items.length) items[0].focus();
-          document.body.classList.add('no-scroll');
-          document.addEventListener('click', handleOutside);
-          document.addEventListener('keydown', handleKeydown);
-          window.addEventListener('resize', handleResize);
-          isOpen = true;
+      const getItems = () => panel.querySelectorAll('[role="menuitem"]');
+
+      function openMenu() {
+        if (isOpen) return;
+        panel.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+        const items = getItems();
+        if (items.length) items[0].focus();
+        document.body.classList.add('no-scroll');
+        document.addEventListener('click', handleOutside);
+        document.addEventListener('keydown', handleKeydown);
+        window.addEventListener('resize', handleResize);
+        isOpen = true;
+      }
+
+      function closeMenu() {
+        if (!isOpen) return;
+        panel.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+        document.removeEventListener('click', handleOutside);
+        document.removeEventListener('keydown', handleKeydown);
+        window.removeEventListener('resize', handleResize);
+        btn.focus();
+        isOpen = false;
+      }
+
+      function handleOutside(e) {
+        if (!header.contains(e.target) && !panel.contains(e.target)) {
+          closeMenu();
         }
+      }
 
-        function closeMenu() {
-          if (!isOpen) return;
-          panel.classList.remove('is-open');
-          btn.setAttribute('aria-expanded', 'false');
-          panel.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('no-scroll');
-          document.removeEventListener('click', handleOutside);
-          document.removeEventListener('keydown', handleKeydown);
-          window.removeEventListener('resize', handleResize);
-          btn.focus();
-          isOpen = false;
+      function handleKeydown(e) {
+        if (e.key === 'Escape') {
+          closeMenu();
+          return;
         }
-
-        function handleOutside(e) {
-          if (!header.contains(e.target) && !panel.contains(e.target)) {
-            closeMenu();
+        if (e.key === 'Tab' && isOpen) {
+          const items = Array.from(getItems());
+          if (!items.length) return;
+          const first = items[0];
+          const last = items[items.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
           }
         }
+      }
 
-        function handleKeydown(e) {
-          if (e.key === 'Escape') {
-            closeMenu();
-            return;
-          }
-          if (e.key === 'Tab' && isOpen) {
-            const items = Array.from(getItems());
-            if (!items.length) return;
-            const first = items[0];
-            const last = items[items.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-            }
-          }
+      function handleResize() {
+        if (window.innerWidth >= 768) {
+          closeMenu();
         }
+      }
 
-        function handleResize() {
-          if (window.innerWidth >= 768) {
-            closeMenu();
-          }
-        }
+      btn.addEventListener('click', () => {
+        isOpen ? closeMenu() : openMenu();
+      });
+    })();
+  </script>
+</body>
 
-        btn.addEventListener('click', () => {
-          isOpen ? closeMenu() : openMenu();
-        });
-      })();
-    </script>
-  </body>
-  </html>
+</html>
