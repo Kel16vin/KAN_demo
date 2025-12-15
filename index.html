@@ -8,8 +8,8 @@
     content="Ugandan-owned ICT company delivering Smart Education, Enterprise IT, Cloud, Consultancy & Hardware Solutions." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/fav_kan.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/fav_kan.png">
 
   <!-- Tailwind CDN (JIT mode) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -285,24 +285,23 @@
 
     .orange-bar {
       position: absolute;
-      width: 250px;
-      height: 80px;
+      width: 80px;
+      height: 30px;
       background-color: #ff9900;
-      border-radius: 10px;
+      border-radius: 9999px; /* Fully rounded */
       z-index: 1;
       top: 50%;
       left: 50%;
-      transform: translate(calc(-50% - 75px), -50%);
+      transform: translate(-100%, -50%);
     }
 
     .spinning-ring {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border: 30px solid transparent;
-      border-top: 30px solid #2c2c6c;
-      border-right: 30px solid #2c2c6c;
-      border-bottom: 30px solid #2c2c6c;
+      width: 100px;
+      height: 100px;
+      border: 12px solid transparent;
+      border-top: 12px solid #2c2c6c;
+      border-right: 12px solid #2c2c6c;
+      border-bottom: 12px solid #2c2c6c;
       border-radius: 50%;
       animation: spin 1.5s linear infinite;
       z-index: 2;
@@ -350,6 +349,34 @@
 
     #content {
       display: none;
+    }
+
+    .animate-marquee {
+      animation: marquee 40s linear infinite;
+    }
+
+    .animate-marquee2 {
+      animation: marquee2 40s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes marquee2 {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
     }
   </style>
 </head>
@@ -482,34 +509,61 @@
     <!-- Page Content Starts Here -->
     <main class="pt-24">
       <!-- HERO -->
-      <section
-        class="h-screen flex items-center justify-center relative bg-gradient-to-br from-navy via-purple-900 to-navy text-white overflow-hidden">
-        <div class="absolute inset-0 bg-black/30"></div>
-        <img src="assets/img/circ.png" alt="Hero"
-          class="parallax-bg absolute inset-0 w-full h-full object-cover opacity-40 ">
+      <!-- HERO -->
+      <section class="min-h-screen relative bg-navy overflow-hidden flex items-center">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-900/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3">
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4">
+          </div>
+          <img src="assets/img/circ.png" alt="Hero Background"
+            class="parallax-bg absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay">
+        </div>
 
-        <div class="relative text-center px-4 md:px-6 z-10">
-          <div class="mb-8 md:mb-12"></div>
-          <h1 class="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-black leading-tight mt-10 md:mt-20 font-serif">
-            <span class="block">Empowering Uganda</span>
-            <span class="block text-yellow">Through Innovation</span>
-          </h1>
-          <p class="mt-6 md:mt-8 text-base sm:text-lg md:text-2xl max-w-4xl mx-auto opacity-90">
-            Your trusted Ugandan partner in Smart Education, Enterprise IT, Cloud Solutions & Modern Infrastructure
-          </p>
-          <div class="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-            <a href="services.html"
-              class="magnetic inline-block px-8 py-3 md:px-12 md:py-5 bg-orange text-white text-base md:text-xl font-bold rounded-full hover:bg-yellow transition transform hover:scale-105">Explore
-              Solutions</a>
-            <a href="clients.html"
-              class="magnetic inline-block px-8 py-3 md:px-12 md:py-5 border-2 border-white text-white text-base md:text-xl font-bold rounded-full hover:bg-white hover:text-navy transition">Contact
-              Us</a>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full pt-20">
+          <div class="max-w-5xl pb-20">
+            <span
+              class="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/10 text-orange font-semibold text-sm mb-8 backdrop-blur-md transition hover:bg-white/20 cursor-default"
+              data-aos>Leading Technology Partner in Uganda</span>
+
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold text-white mb-8 leading-tight font-serif" data-aos>
+              <span class="block">Empowering Uganda</span>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange to-yellow">Through
+                Innovation</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed mb-12" data-aos>
+              Your trusted partner for Smart Education, Enterprise IT, Cloud Solutions & Modern Infrastructure. We build
+              the future, today.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5" data-aos>
+              <a href="services.html"
+                class="magnetic group relative px-8 py-6 bg-orange text-white text-lg font-bold rounded-full overflow-hidden shadow-lg hover:shadow-orange/50 transition-all duration-300">
+                <span class="relative z-10 group-hover:text-white transition-colors">Explore Solutions</span>
+                <div
+                  class="absolute inset-0 bg-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out">
+                </div>
+              </a>
+              <a href="clients.html"
+                class="magnetic group relative px-8 py-6 bg-transparent border-2 border-white/30 text-white text-lg font-bold rounded-full overflow-hidden hover:border-white transition-all duration-300">
+                <span class="relative z-10 group-hover:text-navy transition-colors">Contact Us</span>
+                <div
+                  class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out">
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer"
+        <!-- Scroll Indicator -->
+        <div
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-white/50 hover:text-orange transition-colors"
           onclick="lenis.scrollTo('#quick-stats')">
-          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
@@ -522,7 +576,8 @@
 
         <!-- Marquee Container -->
         <div class="relative flex overflow-x-hidden group">
-          <div class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
+          <div
+            class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
             <!-- Original Logos -->
             <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
               class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
@@ -548,7 +603,8 @@
               class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
           </div>
 
-          <div class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
+          <div
+            class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
             <!-- Double Duplicate for smoothness if needed, or just let CSS handle it. 
                   Actually, standardized CSS marquee usually requires two identical sets sliding. 
              -->
@@ -576,35 +632,6 @@
           </div>
         </div>
 
-        <style>
-          .animate-marquee {
-            animation: marquee 40s linear infinite;
-          }
-
-          .animate-marquee2 {
-            animation: marquee2 40s linear infinite;
-          }
-
-          @keyframes marquee {
-            0% {
-              transform: translateX(0%);
-            }
-
-            100% {
-              transform: translateX(-100%);
-            }
-          }
-
-          @keyframes marquee2 {
-            0% {
-              transform: translateX(100%);
-            }
-
-            100% {
-              transform: translateX(0%);
-            }
-          }
-        </style>
       </section>
 
       <!-- Quick Stats -->
@@ -637,79 +664,183 @@
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive technology solutions designed to elevate
               your institution.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-orange/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-orange group-hover:text-white transition">
-                <i class="fas fa-graduation-cap text-3xl text-orange group-hover:text-white"></i>
+          <div class="space-y-32">
+
+            <!-- Section 1: Smart Education -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-2 lg:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Smart Education</h2>
+                <div class="w-20 h-1.5 bg-orange mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Revolutionizing classrooms with interactive displays, learning management systems, and digital
+                  content.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> Interactive Displays
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> Learning Management Systems
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> Digital Content
+                  </li>
+                </ul>
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Smart Education</h3>
-              <p class="text-gray-600 mb-6">Revolutionizing classrooms with interactive displays, learning management
-                systems, and digital content.</p>
-              <a href="services.html" class="text-orange font-bold hover:underline">Learn More →</a>
-            </div>
-            <!-- Card 2 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                <i class="fas fa-server text-3xl text-blue-600 group-hover:text-white"></i>
+              <div class="order-1 lg:order-2 relative group">
+                <div
+                  class="absolute -inset-4 bg-orange/20 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/kids_tech.png" alt="Smart Education"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Enterprise IT</h3>
-              <p class="text-gray-600 mb-6">Robust infrastructure, networking, and security solutions to keep your
-                business running smoothly.</p>
-              <a href="services.html" class="text-blue-600 font-bold hover:underline">Learn More →</a>
             </div>
-            <!-- Card 3 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
-                <i class="fas fa-cloud text-3xl text-purple-600 group-hover:text-white"></i>
+
+            <!-- Section 2: Enterprise IT -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-1 relative group">
+                <div
+                  class="absolute -inset-4 bg-blue-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/server.jpg" alt="Enterprise IT"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Cloud & Software</h3>
-              <p class="text-gray-600 mb-6">Custom software development, cloud hosting, and digital transformation
-                consultancy.</p>
-              <a href="services.html" class="text-purple-600 font-bold hover:underline">Learn More →</a>
-            </div>
-            <!-- Card 4 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition">
-                <i class="fas fa-chart-line text-3xl text-green-600 group-hover:text-white"></i>
+              <div class="order-2">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Enterprise IT</h2>
+                <div class="w-20 h-1.5 bg-blue-600 mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Robust infrastructure, networking, and security solutions to keep your business running smoothly.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> Robust Infrastructure
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> Networking & Security
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> Business Continuity
+                  </li>
+                </ul>
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">ICT Consultancy</h3>
-              <p class="text-gray-600 mb-6">Strategic planning, IT audits, and procurement services to help you make
-                informed decisions.</p>
-              <a href="services.html" class="text-green-600 font-bold hover:underline">Learn More →</a>
             </div>
-            <!-- Card 5 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition">
-                <i class="fas fa-chalkboard-teacher text-3xl text-red-600 group-hover:text-white"></i>
+
+            <!-- Section 3: Cloud & Software -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-2 lg:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Cloud & Software</h2>
+                <div class="w-20 h-1.5 bg-purple-600 mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Custom software development, cloud hosting, and digital transformation consultancy.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Custom Software Development
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Cloud Hosting & Migration
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Digital Transformation
+                  </li>
+                </ul>
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Capacity Building</h3>
-              <p class="text-gray-600 mb-6">Empowering teachers and staff with hands-on training in the latest digital
-                tools.</p>
-              <a href="services.html" class="text-red-600 font-bold hover:underline">Learn More →</a>
-            </div>
-            <!-- Card 6 -->
-            <div
-              class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-gray-100 group">
-              <div
-                class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
-                <i class="fas fa-headset text-3xl text-teal-600 group-hover:text-white"></i>
+              <div class="order-1 lg:order-2 relative group">
+                <div
+                  class="absolute -inset-4 bg-purple-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/code.jpg" alt="Cloud & Software"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
               </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Tech Support</h3>
-              <p class="text-gray-600 mb-6">Reliable maintenance, repairs, and 24/7 support to ensure your systems never
-                fail.</p>
-              <a href="services.html" class="text-teal-600 font-bold hover:underline">Learn More →</a>
             </div>
+
+            <!-- Section 4: ICT Consultancy -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-1 relative group">
+                <div
+                  class="absolute -inset-4 bg-green-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/consult.jpg" alt="ICT Consultancy"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
+              </div>
+              <div class="order-2">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">ICT Consultancy</h2>
+                <div class="w-20 h-1.5 bg-green-600 mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Strategic planning, IT audits, and procurement services to help you make informed decisions.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> Strategic IT Planning
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> IT Audits & Assesments
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> Procurement Services
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Section 5: Capacity Building -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-2 lg:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Capacity Building</h2>
+                <div class="w-20 h-1.5 bg-red-600 mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Empowering teachers and staff with hands-on training in the latest digital tools.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> Teacher & Staff Training
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> Digital Tools Workshops
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> Continuous Professional Development
+                  </li>
+                </ul>
+              </div>
+              <div class="order-1 lg:order-2 relative group">
+                <div
+                  class="absolute -inset-4 bg-red-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/manager.jpg" alt="Capacity Building"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
+              </div>
+            </div>
+
+            <!-- Section 6: Tech Support -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+              <div class="order-1 relative group">
+                <div
+                  class="absolute -inset-4 bg-teal-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+                </div>
+                <img src="assets/img/maintain.jpg" alt="Tech Support"
+                  class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
+              </div>
+              <div class="order-2">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Tech Support</h2>
+                <div class="w-20 h-1.5 bg-teal-600 mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Reliable maintenance, repairs, and 24/7 support to ensure your systems never fail.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-teal-600 mr-4 text-xl"></i> 24/7 On-call Support
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-teal-600 mr-4 text-xl"></i> Proactive Maintenance
+                  </li>
+                  <li class="flex items-center text-lg font-medium text-navy">
+                    <i class="fas fa-check-circle text-teal-600 mr-4 text-xl"></i> Hardware & Software Repairs
+                  </li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -736,7 +867,32 @@
                   <circle cx="60" cy="25" r="8" fill="#ffb400" />
                   <path d="M55 20 L60 30 L65 20" stroke="#ffb400" stroke-width="4" />
                 </svg> -->
-              <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#EDEDED" d="M50 0c-27.614 0-50 22.385-50 49.999 0 27.615 22.386 50.001 50 50.001s50-22.386 50-50.001c0-27.614-22.386-49.999-50-49.999z"></path><path fill="#D5D5D5" d="M78.559 27.014l1.427 1.428-37.697 33.551-4.283-4.283 40.553-30.696z"></path><path fill="#BEBEBE" d="M61 76.999v6h-6v-6h-2v6h-6v-6h-2v6h-6v-6h-2v8h26v-8h-2z"></path><path fill="#EFC75E" d="M47.031 8.094c-15.203 1.044-28.29 10.351-34.742 23.434l5.424 2.656c5.767-11.646 17.669-19.813 31.333-20.166.32-.008.636 0 .954 0v-6.014c-.983 0-1.971.021-2.969.09z"></path><path fill="#E2574C" d="M85.985 49.988c0 5.471-1.437 10.873-3.686 15.61-.689 1.452-.172 3.182 1.235 3.976l.054.03c1.564.882 3.537.234 4.305-1.381 2.63-5.533 4.107-11.843 4.107-18.235 0-7.042-1.743-13.672-4.807-19.5l-5.326 2.794c2.624 4.993 4.118 10.674 4.118 16.706z"></path><path fill="#3DB39E" d="M16.407 69.613l.054-.029c1.408-.775 1.924-2.467 1.234-3.887-2.439-5.021-3.886-11.12-3.658-17.104.209-5.493 1.686-10.681 4.13-15.293l-5.356-2.81c-2.57 4.867-4.211 10.29-4.674 16.029-.619 7.668.863 15.368 3.965 21.744.767 1.578 2.74 2.213 4.305 1.35z"></path><path fill="#F4B459" d="M50 8.004v6.014c14.174.001 26.436 8.185 32.301 20.095l5.392-2.652c-6.847-13.899-21.151-23.454-37.693-23.457z"></path><path fill="#324D5B" d="M76.559 22.014l1.427 1.428-35.697 38.551-4.283-4.283 38.553-35.696z"></path><path fill="#1E2D36" d="M50 44.999c-2.762 0-5 2.238-5 5s2.238 5 5 5 5-2.238 5-5-2.238-5-5-5z"></path></g></svg>
+                <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path fill="#EDEDED"
+                      d="M50 0c-27.614 0-50 22.385-50 49.999 0 27.615 22.386 50.001 50 50.001s50-22.386 50-50.001c0-27.614-22.386-49.999-50-49.999z">
+                    </path>
+                    <path fill="#D5D5D5" d="M78.559 27.014l1.427 1.428-37.697 33.551-4.283-4.283 40.553-30.696z"></path>
+                    <path fill="#BEBEBE" d="M61 76.999v6h-6v-6h-2v6h-6v-6h-2v6h-6v-6h-2v8h26v-8h-2z"></path>
+                    <path fill="#EFC75E"
+                      d="M47.031 8.094c-15.203 1.044-28.29 10.351-34.742 23.434l5.424 2.656c5.767-11.646 17.669-19.813 31.333-20.166.32-.008.636 0 .954 0v-6.014c-.983 0-1.971.021-2.969.09z">
+                    </path>
+                    <path fill="#E2574C"
+                      d="M85.985 49.988c0 5.471-1.437 10.873-3.686 15.61-.689 1.452-.172 3.182 1.235 3.976l.054.03c1.564.882 3.537.234 4.305-1.381 2.63-5.533 4.107-11.843 4.107-18.235 0-7.042-1.743-13.672-4.807-19.5l-5.326 2.794c2.624 4.993 4.118 10.674 4.118 16.706z">
+                    </path>
+                    <path fill="#3DB39E"
+                      d="M16.407 69.613l.054-.029c1.408-.775 1.924-2.467 1.234-3.887-2.439-5.021-3.886-11.12-3.658-17.104.209-5.493 1.686-10.681 4.13-15.293l-5.356-2.81c-2.57 4.867-4.211 10.29-4.674 16.029-.619 7.668.863 15.368 3.965 21.744.767 1.578 2.74 2.213 4.305 1.35z">
+                    </path>
+                    <path fill="#F4B459"
+                      d="M50 8.004v6.014c14.174.001 26.436 8.185 32.301 20.095l5.392-2.652c-6.847-13.899-21.151-23.454-37.693-23.457z">
+                    </path>
+                    <path fill="#324D5B" d="M76.559 22.014l1.427 1.428-35.697 38.551-4.283-4.283 38.553-35.696z"></path>
+                    <path fill="#1E2D36" d="M50 44.999c-2.762 0-5 2.238-5 5s2.238 5 5 5 5-2.238 5-5-2.238-5-5-5z">
+                    </path>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">Rapid Deployment</h3>
               <p class="text-gray-300 text-lg">See an immediate boost in operational efficiency with our optimized
@@ -752,7 +908,25 @@
                   <circle cx="60" cy="65" r="12" fill="#ffb400" />
                   <path d="M60 50 L60 65 M60 65 L70 70" stroke="#ffb400" stroke-width="4" />
                 </svg> -->
-                <svg width="120" height="120" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M597.678 480.76L390.797 333.998c-22.209-15.766-53-10.532-68.762 11.687l-2.04 2.871c-15.753 22.214-10.526 53 11.691 68.762l206.876 146.771c22.218 15.757 53 10.527 68.766-11.687l2.035-2.876c15.768-22.218 10.529-53.005-11.685-68.766z" fill="#F39A2B"></path><path d="M585.066 423.392l-2.871-2.034c-22.218-15.763-53.004-10.527-68.766 11.687L279.007 763.472c-15.762 22.214-10.527 53.005 11.69 68.763l2.871 2.04c22.218 15.762 53.004 10.53 68.762-11.688l234.423-330.428c15.767-22.22 10.531-53.001-11.687-68.767z" fill="#E5594F"></path><path d="M891.662 525.126c-0.363 50.106-8.104 91.767-27.502 142.522-13.232 34.625-44.231 82.177-70.529 111.108-62.993 69.31-152.478 113.292-240.772 121.615-100.773 9.501-189.621-17.478-271.287-78.551 7.65 5.723-7.536-6.408-7.061-6.009-4.562-3.821-8.967-7.82-13.369-11.824-8.803-8.003-17.105-16.535-25.225-25.224-18.148-19.432-26.188-30.526-41.439-54.866-27.11-43.264-40.704-80.283-51.007-132.536-4.015-20.354-5.395-39.803-5.586-66.233-0.531-73.33-114.29-73.381-113.758 0 1.607 222.487 154.098 420.146 370.093 475.715 216.482 55.697 449.039-49.258 553.91-245.54 37.754-70.664 56.715-150.224 57.293-230.179 0.526-73.379-113.231-73.328-113.761 0.002z" fill="#4A5699"></path><path d="M137.884 501.467c0.362-50.104 8.103-91.762 27.502-142.52 13.233-34.621 44.233-82.173 70.53-111.108 62.993-69.309 152.472-113.29 240.768-121.615 100.773-9.5 189.626 17.479 271.292 78.554-7.652-5.721 7.532 6.408 7.057 6.01 4.563 3.819 8.968 7.821 13.371 11.823 8.803 8 17.108 16.535 25.228 25.225 18.147 19.43 26.187 30.526 41.438 54.866 27.111 43.264 40.709 80.28 51.009 132.533 4.014 20.352 5.396 39.804 5.586 66.232 0.529 73.33 114.287 73.384 113.76 0-1.608-222.489-154.107-420.144-370.099-475.715-216.482-55.7-449.036 49.26-553.905 245.541-37.753 70.664-56.715 150.219-57.292 230.174-0.534 73.384 113.225 73.33 113.755 0z" fill="#C45FA0"></path></g></svg>
+                <svg width="120" height="120" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M597.678 480.76L390.797 333.998c-22.209-15.766-53-10.532-68.762 11.687l-2.04 2.871c-15.753 22.214-10.526 53 11.691 68.762l206.876 146.771c22.218 15.757 53 10.527 68.766-11.687l2.035-2.876c15.768-22.218 10.529-53.005-11.685-68.766z"
+                      fill="#F39A2B"></path>
+                    <path
+                      d="M585.066 423.392l-2.871-2.034c-22.218-15.763-53.004-10.527-68.766 11.687L279.007 763.472c-15.762 22.214-10.527 53.005 11.69 68.763l2.871 2.04c22.218 15.762 53.004 10.53 68.762-11.688l234.423-330.428c15.767-22.22 10.531-53.001-11.687-68.767z"
+                      fill="#E5594F"></path>
+                    <path
+                      d="M891.662 525.126c-0.363 50.106-8.104 91.767-27.502 142.522-13.232 34.625-44.231 82.177-70.529 111.108-62.993 69.31-152.478 113.292-240.772 121.615-100.773 9.501-189.621-17.478-271.287-78.551 7.65 5.723-7.536-6.408-7.061-6.009-4.562-3.821-8.967-7.82-13.369-11.824-8.803-8.003-17.105-16.535-25.225-25.224-18.148-19.432-26.188-30.526-41.439-54.866-27.11-43.264-40.704-80.283-51.007-132.536-4.015-20.354-5.395-39.803-5.586-66.233-0.531-73.33-114.29-73.381-113.758 0 1.607 222.487 154.098 420.146 370.093 475.715 216.482 55.697 449.039-49.258 553.91-245.54 37.754-70.664 56.715-150.224 57.293-230.179 0.526-73.379-113.231-73.328-113.761 0.002z"
+                      fill="#4A5699"></path>
+                    <path
+                      d="M137.884 501.467c0.362-50.104 8.103-91.762 27.502-142.52 13.233-34.621 44.233-82.173 70.53-111.108 62.993-69.309 152.472-113.29 240.768-121.615 100.773-9.5 189.626 17.479 271.292 78.554-7.652-5.721 7.532 6.408 7.057 6.01 4.563 3.819 8.968 7.821 13.371 11.823 8.803 8 17.108 16.535 25.228 25.225 18.147 19.43 26.187 30.526 41.438 54.866 27.111 43.264 40.709 80.28 51.009 132.533 4.014 20.352 5.396 39.804 5.586 66.232 0.529 73.33 114.287 73.384 113.76 0-1.608-222.489-154.107-420.144-370.099-475.715-216.482-55.7-449.036 49.26-553.905 245.541-37.753 70.664-56.715 150.219-57.292 230.174-0.534 73.384 113.225 73.33 113.755 0z"
+                      fill="#C45FA0"></path>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">Real-Time Monitoring</h3>
               <p class="text-gray-300 text-lg">Track system performance and usage metrics instantly.</p>
@@ -768,7 +942,28 @@
                   <circle cx="60" cy="65" r="8" fill="#ff6b35" />
                   <circle cx="75" cy="65" r="8" fill="#ff6b35" />
                 </svg> -->
-                <svg width="120" height="120" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M325.8 819.6h-55c-38.6 0-70-31.4-70-70V510.1c0-38.6 31.4-70 70-70h55c38.6 0 70 31.4 70 70v239.5c0 38.6-31.4 70-70 70z m-54.9-339.5c-16.5 0-30 13.5-30 30v239.5c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V510.1c0-16.5-13.5-30-30-30h-55z" fill="#005BFF"></path><path d="M834.8 177.7h-55c-16.5 0-30 13.5-30 30v541.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V207.7c0-16.5-13.5-30-30-30zM580.3 300.7h-55c-16.5 0-30 13.5-30 30v418.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V330.7c0-16.5-13.5-30-30-30zM325.8 479.7h-55c-16.5 0-30 13.5-30 30v239.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V509.7c0-16.5-13.4-30-30-30z" fill="#E6E6E6"></path><path d="M834.8 137.7h-55c-38.6 0-70 31.4-70 70v207.9c-18.3-8.6-38.4-14.2-59.5-16v-68.8c0-38.6-31.4-70-70-70h-55c-38.6 0-70 31.4-70 70v418.9c0 38.6 31.4 70 70 70h55c38.2 0 69.3-30.7 70-68.7 21.1-1.8 41.2-7.4 59.5-16v14.7c0 38.6 31.4 70 70 70h55c38.6 0 70-31.4 70-70v-542c0-38.6-31.5-70-70-70z m-85 364c13.6 21.2 21.5 46.4 21.5 73.5 0 27-7.9 52.2-21.5 73.5v-147z m-251.2 73.5c0-66.8 48.2-122.5 111.7-134.1v268.2c-63.5-11.6-111.7-67.3-111.7-134.1z m26.7-274.5h55c16.5 0 30 13.5 30 30v69.9c-46.6 6.6-87.4 31.4-115 67V330.7c0-16.5 13.5-30 30-30z m55 478.9h-55c-16.5 0-30-13.5-30-30v-66.8c27.5 35.6 68.3 60.5 115 67-0.1 16.5-13.5 29.8-30 29.8z m70-68.9v-271c21.8 2.4 42 10 59.5 21.6v227.9c-17.5 11.5-37.7 19.1-59.5 21.5z m99.5 38.9v-16.9l46.6 46.9h-16.6c-16.6 0-30-13.4-30-30z m115 0c0 11.3-6.3 21.2-15.6 26.3l-82.8-83.2c27.9-31.2 44.9-72.4 44.9-117.5 0-53.4-23.9-101.4-61.5-133.7V207.7c0-16.5 13.5-30 30-30h55c16.5 0 30 13.5 30 30v541.9zM892.2 881.3h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-14.4-35.6c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z" fill="#005BFF"></path><path d="M635 438.9c-75.2 0-136.4 61.2-136.4 136.4S559.8 711.6 635 711.6s136.4-61.2 136.4-136.4S710.2 438.9 635 438.9z" fill="#FFFFFF"></path><path d="M635 461.7c-14 0-27.8 2.5-40.8 7.5-5.2 2-7.7 7.8-5.7 12.9 2 5.2 7.8 7.7 12.9 5.7 10.7-4.1 22-6.2 33.6-6.2 51.6 0 93.5 42 93.5 93.5 0 19.7-6.1 38.5-17.5 54.5-4.4 6.2-9.6 11.8-15.5 16.8-4.2 3.6-4.7 9.9-1.1 14.1 2 2.3 4.8 3.5 7.6 3.5 2.3 0 4.6-0.8 6.5-2.4 7-6 13.4-12.8 18.8-20.4 13.9-19.4 21.3-42.2 21.3-66.2-0.1-62.4-51-113.3-113.6-113.3z" fill="#06F3FF"></path></g></svg>
+                <svg width="120" height="120" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M325.8 819.6h-55c-38.6 0-70-31.4-70-70V510.1c0-38.6 31.4-70 70-70h55c38.6 0 70 31.4 70 70v239.5c0 38.6-31.4 70-70 70z m-54.9-339.5c-16.5 0-30 13.5-30 30v239.5c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V510.1c0-16.5-13.5-30-30-30h-55z"
+                      fill="#005BFF"></path>
+                    <path
+                      d="M834.8 177.7h-55c-16.5 0-30 13.5-30 30v541.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V207.7c0-16.5-13.5-30-30-30zM580.3 300.7h-55c-16.5 0-30 13.5-30 30v418.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V330.7c0-16.5-13.5-30-30-30zM325.8 479.7h-55c-16.5 0-30 13.5-30 30v239.9c0 16.5 13.5 30 30 30h55c16.5 0 30-13.5 30-30V509.7c0-16.5-13.4-30-30-30z"
+                      fill="#E6E6E6"></path>
+                    <path
+                      d="M834.8 137.7h-55c-38.6 0-70 31.4-70 70v207.9c-18.3-8.6-38.4-14.2-59.5-16v-68.8c0-38.6-31.4-70-70-70h-55c-38.6 0-70 31.4-70 70v418.9c0 38.6 31.4 70 70 70h55c38.2 0 69.3-30.7 70-68.7 21.1-1.8 41.2-7.4 59.5-16v14.7c0 38.6 31.4 70 70 70h55c38.6 0 70-31.4 70-70v-542c0-38.6-31.5-70-70-70z m-85 364c13.6 21.2 21.5 46.4 21.5 73.5 0 27-7.9 52.2-21.5 73.5v-147z m-251.2 73.5c0-66.8 48.2-122.5 111.7-134.1v268.2c-63.5-11.6-111.7-67.3-111.7-134.1z m26.7-274.5h55c16.5 0 30 13.5 30 30v69.9c-46.6 6.6-87.4 31.4-115 67V330.7c0-16.5 13.5-30 30-30z m55 478.9h-55c-16.5 0-30-13.5-30-30v-66.8c27.5 35.6 68.3 60.5 115 67-0.1 16.5-13.5 29.8-30 29.8z m70-68.9v-271c21.8 2.4 42 10 59.5 21.6v227.9c-17.5 11.5-37.7 19.1-59.5 21.5z m99.5 38.9v-16.9l46.6 46.9h-16.6c-16.6 0-30-13.4-30-30z m115 0c0 11.3-6.3 21.2-15.6 26.3l-82.8-83.2c27.9-31.2 44.9-72.4 44.9-117.5 0-53.4-23.9-101.4-61.5-133.7V207.7c0-16.5 13.5-30 30-30h55c16.5 0 30 13.5 30 30v541.9zM892.2 881.3h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-50 0h-10c-5.5 0-10-4.5-10-10s4.5-10 10-10h10c5.5 0 10 4.5 10 10s-4.4 10-10 10z m-14.4-35.6c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z m0-50c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10s10 4.5 10 10v10c0 5.5-4.5 10-10 10z"
+                      fill="#005BFF"></path>
+                    <path
+                      d="M635 438.9c-75.2 0-136.4 61.2-136.4 136.4S559.8 711.6 635 711.6s136.4-61.2 136.4-136.4S710.2 438.9 635 438.9z"
+                      fill="#FFFFFF"></path>
+                    <path
+                      d="M635 461.7c-14 0-27.8 2.5-40.8 7.5-5.2 2-7.7 7.8-5.7 12.9 2 5.2 7.8 7.7 12.9 5.7 10.7-4.1 22-6.2 33.6-6.2 51.6 0 93.5 42 93.5 93.5 0 19.7-6.1 38.5-17.5 54.5-4.4 6.2-9.6 11.8-15.5 16.8-4.2 3.6-4.7 9.9-1.1 14.1 2 2.3 4.8 3.5 7.6 3.5 2.3 0 4.6-0.8 6.5-2.4 7-6 13.4-12.8 18.8-20.4 13.9-19.4 21.3-42.2 21.3-66.2-0.1-62.4-51-113.3-113.6-113.3z"
+                      fill="#06F3FF"></path>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">Transparent Reporting</h3>
               <p class="text-gray-300 text-lg">Detailed analysis and reporting for all deployed solutions.</p>
@@ -783,7 +978,49 @@
                   <circle cx="60" cy="70" r="15" fill="#ff6b35" />
                   <path d="M60 55 L60 70 M52 62 L68 62" stroke="#FFFFFF" stroke-width="3" />
                 </svg> -->
-                <svg width="120" height="120" viewBox="0 -0.5 1025 1025" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M447.427363 576.572637m-431.447814 0a431.447814 431.447814 0 1 0 862.895628 0 431.447814 431.447814 0 1 0-862.895628 0Z" fill="#FFFFFF"></path><path d="M447.427363 1024c-246.884027 0-447.427363-200.543336-447.427363-447.427363s200.543336-447.427363 447.427363-447.427363 447.427363 200.543336 447.427363 447.427363-200.543336 447.427363-447.427363 447.427363z m0-862.895628c-229.306523 0-415.468266 186.161742-415.468266 415.468265s186.161742 415.468266 415.468266 415.468266 415.468266-186.161742 415.468265-415.468266-186.161742-415.468266-415.468265-415.468265z" fill="#191919"></path><path d="M447.427363 576.572637m-324.384838 0a324.384838 324.384838 0 1 0 648.769676 0 324.384838 324.384838 0 1 0-648.769676 0Z" fill="#F86C6C"></path><path d="M447.427363 917.736001c-187.759697 0-340.364387-152.60469-340.364387-340.364386S259.667666 237.007228 447.427363 237.007228s340.364387 152.60469 340.364387 340.364387-152.60469 340.364387-340.364387 340.364386z m0-649.568653c-170.182193 0-308.405289 138.223096-308.40529 308.405289s138.223096 308.405289 308.40529 308.40529 308.405289-138.223096 308.405289-308.40529S617.609556 268.167348 447.427363 268.167348z" fill="#191919"></path><path d="M447.427363 576.572637m-208.53311 0a208.53311 208.53311 0 1 0 417.06622 0 208.53311 208.53311 0 1 0-417.06622 0Z" fill="#FFFFFF"></path><path d="M447.427363 801.884273c-123.841502 0-224.512659-100.671157-224.512659-224.512658S323.585861 352.059978 447.427363 352.059978s224.512659 100.671157 224.512659 224.512659-100.671157 225.311636-224.512659 225.311636zM447.427363 384.019076c-106.263999 0-192.553562 86.289563-192.553562 192.553561S341.163364 769.126199 447.427363 769.126199s192.553562-86.289563 192.553561-192.553562S553.691362 384.019076 447.427363 384.019076z" fill="#191919"></path><path d="M447.427363 576.572637m-101.470134 0a101.470134 101.470134 0 1 0 202.940268 0 101.470134 101.470134 0 1 0-202.940268 0Z" fill="#F86C6C"></path><path d="M447.427363 694.02232c-64.717172 0-117.449683-52.732511-117.449683-117.449683S382.710191 459.122954 447.427363 459.122954 564.877046 511.855465 564.877046 576.572637c0 65.51615-52.732511 117.449683-117.449683 117.449683z m0-202.141291c-47.139669 0-85.490585 38.350917-85.490586 85.490586S400.287694 662.063223 447.427363 662.063223 532.917948 623.712306 532.917948 576.572637 494.567031 491.881029 447.427363 491.881029z" fill="#191919"></path><path d="M1008.309521 114.76368L878.875177 243.399047l-100.671157 2.396933 2.396933-100.671157L910.035297 16.489456l-3.994887 102.269112z" fill="#C2CDDC"></path><path d="M779.002998 261.775528c-3.994887 0-7.989774-1.597955-11.185684-4.793864-3.19591-3.19591-4.793865-7.190797-4.793865-11.984662l2.396933-100.671157c0-3.994887 1.597955-7.989774 4.793864-11.185684L899.64859 4.504795c4.793865-4.793865 11.984662-5.592842 17.577504-3.19591 6.391819 2.396932 9.587729 8.788752 9.587729 15.180571l-3.19591 84.691608 84.691608-3.19591c6.391819 0 12.783639 3.19591 15.180572 9.58773s1.597955 12.783639-3.19591 17.577503l-129.434344 128.635367c-3.19591 3.19591-7.190797 4.793865-11.185684 4.793864l-100.671157 3.19591zM796.580501 152.31562l-1.597954 77.500811 77.500811-1.597955 95.877292-95.877292-61.521263 2.396932c-4.793865 0-8.788752-1.597955-11.984661-4.793864s-4.793865-7.190797-4.793865-11.984662l2.396932-61.521262-95.877292 95.877292z" fill="#191919"></path><path d="M455.417137 580.567524c-3.994887 0-7.989774-1.597955-11.185684-4.793864-6.391819-6.391819-6.391819-15.979549 0-22.371368l525.727152-525.727152c6.391819-6.391819 15.979549-6.391819 22.371368 0s6.391819 15.979549 0 22.371368L466.602821 575.77366c-3.19591 3.19591-7.190797 4.793865-11.185684 4.793864z" fill="#191919"></path><path d="M942.793372 188.269604h-95.078315c-8.788752 0-15.979549-7.190797-15.979548-15.979548V78.809696c0-8.788752 7.190797-15.979549 15.979548-15.979549s15.979549 7.190797 15.979549 15.979549v77.500811h79.098766c8.788752 0 15.979549 7.190797 15.979548 15.979549s-7.190797 15.979549-15.979548 15.979548z" fill="#191919"></path></g></svg>
+                <svg width="120" height="120" viewBox="0 -0.5 1025 1025" class="icon" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M447.427363 576.572637m-431.447814 0a431.447814 431.447814 0 1 0 862.895628 0 431.447814 431.447814 0 1 0-862.895628 0Z"
+                      fill="#FFFFFF"></path>
+                    <path
+                      d="M447.427363 1024c-246.884027 0-447.427363-200.543336-447.427363-447.427363s200.543336-447.427363 447.427363-447.427363 447.427363 200.543336 447.427363 447.427363-200.543336 447.427363-447.427363 447.427363z m0-862.895628c-229.306523 0-415.468266 186.161742-415.468266 415.468265s186.161742 415.468266 415.468266 415.468266 415.468266-186.161742 415.468265-415.468266-186.161742-415.468266-415.468265-415.468265z"
+                      fill="#191919"></path>
+                    <path
+                      d="M447.427363 576.572637m-324.384838 0a324.384838 324.384838 0 1 0 648.769676 0 324.384838 324.384838 0 1 0-648.769676 0Z"
+                      fill="#F86C6C"></path>
+                    <path
+                      d="M447.427363 917.736001c-187.759697 0-340.364387-152.60469-340.364387-340.364386S259.667666 237.007228 447.427363 237.007228s340.364387 152.60469 340.364387 340.364387-152.60469 340.364387-340.364387 340.364386z m0-649.568653c-170.182193 0-308.405289 138.223096-308.40529 308.405289s138.223096 308.405289 308.40529 308.40529 308.405289-138.223096 308.405289-308.40529S617.609556 268.167348 447.427363 268.167348z"
+                      fill="#191919"></path>
+                    <path
+                      d="M447.427363 576.572637m-208.53311 0a208.53311 208.53311 0 1 0 417.06622 0 208.53311 208.53311 0 1 0-417.06622 0Z"
+                      fill="#FFFFFF"></path>
+                    <path
+                      d="M447.427363 801.884273c-123.841502 0-224.512659-100.671157-224.512659-224.512658S323.585861 352.059978 447.427363 352.059978s224.512659 100.671157 224.512659 224.512659-100.671157 225.311636-224.512659 225.311636zM447.427363 384.019076c-106.263999 0-192.553562 86.289563-192.553562 192.553561S341.163364 769.126199 447.427363 769.126199s192.553562-86.289563 192.553561-192.553562S553.691362 384.019076 447.427363 384.019076z"
+                      fill="#191919"></path>
+                    <path
+                      d="M447.427363 576.572637m-101.470134 0a101.470134 101.470134 0 1 0 202.940268 0 101.470134 101.470134 0 1 0-202.940268 0Z"
+                      fill="#F86C6C"></path>
+                    <path
+                      d="M447.427363 694.02232c-64.717172 0-117.449683-52.732511-117.449683-117.449683S382.710191 459.122954 447.427363 459.122954 564.877046 511.855465 564.877046 576.572637c0 65.51615-52.732511 117.449683-117.449683 117.449683z m0-202.141291c-47.139669 0-85.490585 38.350917-85.490586 85.490586S400.287694 662.063223 447.427363 662.063223 532.917948 623.712306 532.917948 576.572637 494.567031 491.881029 447.427363 491.881029z"
+                      fill="#191919"></path>
+                    <path
+                      d="M1008.309521 114.76368L878.875177 243.399047l-100.671157 2.396933 2.396933-100.671157L910.035297 16.489456l-3.994887 102.269112z"
+                      fill="#C2CDDC"></path>
+                    <path
+                      d="M779.002998 261.775528c-3.994887 0-7.989774-1.597955-11.185684-4.793864-3.19591-3.19591-4.793865-7.190797-4.793865-11.984662l2.396933-100.671157c0-3.994887 1.597955-7.989774 4.793864-11.185684L899.64859 4.504795c4.793865-4.793865 11.984662-5.592842 17.577504-3.19591 6.391819 2.396932 9.587729 8.788752 9.587729 15.180571l-3.19591 84.691608 84.691608-3.19591c6.391819 0 12.783639 3.19591 15.180572 9.58773s1.597955 12.783639-3.19591 17.577503l-129.434344 128.635367c-3.19591 3.19591-7.190797 4.793865-11.185684 4.793864l-100.671157 3.19591zM796.580501 152.31562l-1.597954 77.500811 77.500811-1.597955 95.877292-95.877292-61.521263 2.396932c-4.793865 0-8.788752-1.597955-11.984661-4.793864s-4.793865-7.190797-4.793865-11.984662l2.396932-61.521262-95.877292 95.877292z"
+                      fill="#191919"></path>
+                    <path
+                      d="M455.417137 580.567524c-3.994887 0-7.989774-1.597955-11.185684-4.793864-6.391819-6.391819-6.391819-15.979549 0-22.371368l525.727152-525.727152c6.391819-6.391819 15.979549-6.391819 22.371368 0s6.391819 15.979549 0 22.371368L466.602821 575.77366c-3.19591 3.19591-7.190797 4.793865-11.185684 4.793864z"
+                      fill="#191919"></path>
+                    <path
+                      d="M942.793372 188.269604h-95.078315c-8.788752 0-15.979549-7.190797-15.979548-15.979548V78.809696c0-8.788752 7.190797-15.979549 15.979548-15.979549s15.979549 7.190797 15.979549 15.979549v77.500811h79.098766c8.788752 0 15.979549 7.190797 15.979548 15.979549s-7.190797 15.979549-15.979548 15.979548z"
+                      fill="#191919"></path>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">Targeted Solutions</h3>
               <p class="text-gray-300 text-lg">Custom strategies designed for your specific industry needs.</p>
@@ -799,7 +1036,54 @@
                   <rect x="65" y="55" width="15" height="10" fill="#ff6b35" />
                   <rect x="40" y="70" width="40" height="8" fill="#EC4899" />
                 </svg> -->
-                <svg width="120" height="120" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path fill="#9093e9" d="M14,60c0,1.104,0.896,2,2,2h32c1.104,0,2-0.896,2-2V38H14V60z"></path> <rect x="14" y="26" fill="#9093e9" width="36" height="10"></rect> <rect x="14" y="14" fill="#9093e9" width="36" height="10"></rect> <path fill="#9093e9" d="M48,2H16c-1.104,0-2,0.896-2,2v8h36V4C50,2.896,49.104,2,48,2z"></path> </g> <g opacity="0.15"> <rect x="14" y="26" width="36" height="10"></rect> <rect x="14" y="14" width="36" height="10"></rect> <path d="M48,2H16c-1.104,0-2,0.896-2,2v8h36V4C50,2.896,49.104,2,48,2z"></path> </g> <g> <path fill="#394240" d="M48,0H16c-2.211,0-4,1.789-4,4v56c0,2.211,1.789,4,4,4h32c2.211,0,4-1.789,4-4V4C52,1.789,50.211,0,48,0z M50,60c0,1.104-0.896,2-2,2H16c-1.104,0-2-0.896-2-2V38h36V60z M50,36H14V26h36V36z M50,24H14V14h36V24z M50,12H14V4 c0-1.104,0.896-2,2-2h32c1.104,0,2,0.896,2,2V12z"></path> <path fill="#394240" d="M43,6H21c-0.553,0-1,0.447-1,1s0.447,1,1,1h22c0.553,0,1-0.447,1-1S43.553,6,43,6z"></path> <path fill="#394240" d="M21,20h22c0.553,0,1-0.447,1-1s-0.447-1-1-1H21c-0.553,0-1,0.447-1,1S20.447,20,21,20z"></path> <path fill="#394240" d="M21,32h22c0.553,0,1-0.447,1-1s-0.447-1-1-1H21c-0.553,0-1,0.447-1,1S20.447,32,21,32z"></path> <path fill="#394240" d="M32,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S30.343,58,32,58z M32,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S31.447,54,32,54z"></path> <path fill="#394240" d="M40,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S38.343,58,40,58z M40,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S39.447,54,40,54z"></path> <path fill="#394240" d="M24,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S22.343,58,24,58z M24,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S23.447,54,24,54z"></path> </g> </g> <circle fill="#45AAB8" cx="24" cy="55" r="1"></circle> <circle fill="#F76D57" cx="32" cy="55" r="1"></circle> <circle fill="#F9EBB2" cx="40" cy="55" r="1"></circle> </g> </g></svg>
+                <svg width="120" height="120" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                  xml:space="preserve" fill="none">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <g>
+                        <g>
+                          <path fill="#9093e9" d="M14,60c0,1.104,0.896,2,2,2h32c1.104,0,2-0.896,2-2V38H14V60z"></path>
+                          <rect x="14" y="26" fill="#9093e9" width="36" height="10"></rect>
+                          <rect x="14" y="14" fill="#9093e9" width="36" height="10"></rect>
+                          <path fill="#9093e9" d="M48,2H16c-1.104,0-2,0.896-2,2v8h36V4C50,2.896,49.104,2,48,2z"></path>
+                        </g>
+                        <g opacity="0.15">
+                          <rect x="14" y="26" width="36" height="10"></rect>
+                          <rect x="14" y="14" width="36" height="10"></rect>
+                          <path d="M48,2H16c-1.104,0-2,0.896-2,2v8h36V4C50,2.896,49.104,2,48,2z"></path>
+                        </g>
+                        <g>
+                          <path fill="#394240"
+                            d="M48,0H16c-2.211,0-4,1.789-4,4v56c0,2.211,1.789,4,4,4h32c2.211,0,4-1.789,4-4V4C52,1.789,50.211,0,48,0z M50,60c0,1.104-0.896,2-2,2H16c-1.104,0-2-0.896-2-2V38h36V60z M50,36H14V26h36V36z M50,24H14V14h36V24z M50,12H14V4 c0-1.104,0.896-2,2-2h32c1.104,0,2,0.896,2,2V12z">
+                          </path>
+                          <path fill="#394240"
+                            d="M43,6H21c-0.553,0-1,0.447-1,1s0.447,1,1,1h22c0.553,0,1-0.447,1-1S43.553,6,43,6z"></path>
+                          <path fill="#394240"
+                            d="M21,20h22c0.553,0,1-0.447,1-1s-0.447-1-1-1H21c-0.553,0-1,0.447-1,1S20.447,20,21,20z">
+                          </path>
+                          <path fill="#394240"
+                            d="M21,32h22c0.553,0,1-0.447,1-1s-0.447-1-1-1H21c-0.553,0-1,0.447-1,1S20.447,32,21,32z">
+                          </path>
+                          <path fill="#394240"
+                            d="M32,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S30.343,58,32,58z M32,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S31.447,54,32,54z">
+                          </path>
+                          <path fill="#394240"
+                            d="M40,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S38.343,58,40,58z M40,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S39.447,54,40,54z">
+                          </path>
+                          <path fill="#394240"
+                            d="M24,58c1.657,0,3-1.344,3-3s-1.343-3-3-3s-3,1.344-3,3S22.343,58,24,58z M24,54c0.553,0,1,0.447,1,1 s-0.447,1-1,1s-1-0.447-1-1S23.447,54,24,54z">
+                          </path>
+                        </g>
+                      </g>
+                      <circle fill="#45AAB8" cx="24" cy="55" r="1"></circle>
+                      <circle fill="#F76D57" cx="32" cy="55" r="1"></circle>
+                      <circle fill="#F9EBB2" cx="40" cy="55" r="1"></circle>
+                    </g>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">Scalable Architecture</h3>
               <p class="text-gray-300 text-lg">Use out-of-the-box or customize every detail as you grow.</p>
@@ -813,7 +1097,15 @@
                   <rect x="35" y="50" width="50" height="30" rx="5" fill="#1E1B4B" />
                   <path d="M50 60 L60 70 L75 55" stroke="#FFFFFF" stroke-width="6" fill="none" />
                 </svg> -->
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 21H4C4 17.4735 6.60771 14.5561 10 14.0709M16.4976 16.2119C15.7978 15.4328 14.6309 15.2232 13.7541 15.9367C12.8774 16.6501 12.7539 17.843 13.4425 18.6868C13.8312 19.1632 14.7548 19.9983 15.4854 20.6353C15.8319 20.9374 16.0051 21.0885 16.2147 21.1503C16.3934 21.203 16.6018 21.203 16.7805 21.1503C16.9901 21.0885 17.1633 20.9374 17.5098 20.6353C18.2404 19.9983 19.164 19.1632 19.5527 18.6868C20.2413 17.843 20.1329 16.6426 19.2411 15.9367C18.3492 15.2307 17.1974 15.4328 16.4976 16.2119ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#ff8533" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M10.5 21H4C4 17.4735 6.60771 14.5561 10 14.0709M16.4976 16.2119C15.7978 15.4328 14.6309 15.2232 13.7541 15.9367C12.8774 16.6501 12.7539 17.843 13.4425 18.6868C13.8312 19.1632 14.7548 19.9983 15.4854 20.6353C15.8319 20.9374 16.0051 21.0885 16.2147 21.1503C16.3934 21.203 16.6018 21.203 16.7805 21.1503C16.9901 21.0885 17.1633 20.9374 17.5098 20.6353C18.2404 19.9983 19.164 19.1632 19.5527 18.6868C20.2413 17.843 20.1329 16.6426 19.2411 15.9367C18.3492 15.2307 17.1974 15.4328 16.4976 16.2119ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
+                      stroke="#ff8533" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
               </div>
               <h3 class="text-2xl font-semibold mb-3">User-Friendly Interface</h3>
               <p class="text-gray-300 text-lg">Intuitive designs that require minimal training.</p>
@@ -975,52 +1267,39 @@
 
     // Function to initialize animations after content is visible
     function initAnimations() {
-      // Parallax Effects
-      gsap.utils.toArray('.parallax-bg').forEach(bg => {
-        gsap.to(bg, {
-          yPercent: 20, // Move background slower
-          ease: "none",
-          scrollTrigger: {
-            trigger: bg.parentElement,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        });
-      });
-
       // Staggered Reveal for Sections
-      // Automatically finds lists/grids and staggers them
       const staggerGroups = document.querySelectorAll('.grid, .space-y-4, .feature-list');
       staggerGroups.forEach(group => {
-        // Get direct children
         const children = group.children;
         if (children.length > 0) {
           gsap.from(children, {
             scrollTrigger: {
               trigger: group,
-              start: "top 85%",
+              start: "top 95%",
               toggleActions: "play none none reverse"
             },
-            y: 50,
+            y: 30,
             opacity: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out"
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
           });
         }
       });
 
-      // Enhanced Single Element Reveal (keeping data-aos)
-      gsap.utils.toArray('[data-aos]').forEach(el => {
-        gsap.from(el, {
-          scrollTrigger: { trigger: el, start: "top 85%" },
-          y: 60,
-          opacity: 0,
-          duration: 1.2,
-          ease: "power4.out"
+      // Enhanced Single Element Reveal
+      const aosElements = document.querySelectorAll('[data-aos]');
+      if (aosElements.length > 0) {
+        gsap.utils.toArray(aosElements).forEach(el => {
+          gsap.from(el, {
+            scrollTrigger: { trigger: el, start: "top 95%" },
+            y: 40,
+            opacity: 0,
+            duration: 1.0,
+            ease: "power3.out"
+          });
         });
-      });
+      }
 
       ScrollTrigger.refresh();
     }

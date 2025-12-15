@@ -7,8 +7,8 @@
   <title>Clients & Contact | KAN Innovative Solutions</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/fav_kan.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/fav_kan.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { navy: '#1e1b4b', orange: '#ff6b35', yellow: '#ffb400' }, fontFamily: { sans: ['Inter', 'system-ui'] } } } }
@@ -453,7 +453,8 @@
 
         <!-- Marquee Container -->
         <div class="relative flex overflow-x-hidden group">
-          <div class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-16 group-hover:[animation-play-state:paused]">
+          <div
+            class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-16 group-hover:[animation-play-state:paused]">
             <!-- Original Logos -->
             <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
               class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
@@ -479,7 +480,8 @@
               class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
           </div>
 
-          <div class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-16 group-hover:[animation-play-state:paused]">
+          <div
+            class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-16 group-hover:[animation-play-state:paused]">
             <!-- Double Duplicate for smoothness if needed, or just let CSS handle it. 
                   Actually, standardized CSS marquee usually requires two identical sets sliding. 
              -->
@@ -537,7 +539,7 @@
         </style>
       </section>
 
-      <section class="section-container px-4 py-0">
+      <section id="contact" class="section-container px-4 py-0">
         <div class="contact-grid max-w-[1200px] mx-auto mb-20 grid gap-[50px] md:grid-cols-2 text-left">
 
           <div class="contact-info-block">
@@ -573,25 +575,52 @@
           <div class="form-section">
             <h4 class="text-3xl mb-6" style="color: var(--primary-color);">Send Us a Message</h4>
             <div class="contact-form">
-              <form action="submit_form.php" method="POST" class="flex flex-col">
-                <input type="text" name="name" placeholder="Your Name" required
-                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full" />
-                <input type="email" name="email" placeholder="Your Email" required
-                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full" />
-                <input type="text" name="subject"
+              <form id="whatsappForm" class="flex flex-col">
+                <input type="text" id="name" name="name" placeholder="Your Name" required
+                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full focus:outline-none focus:ring-2 focus:ring-orange/50 transition" />
+                <input type="email" id="email" name="email" placeholder="Your Email" required
+                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full focus:outline-none focus:ring-2 focus:ring-orange/50 transition" />
+                <input type="text" id="subject" name="subject"
                   placeholder="Subject or Service Inquiry (e.g., Consultancy, Product Quote)" required
-                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full" />
-                <textarea name="message" placeholder="Your Message" required
-                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full min-h-[150px] resize-y"></textarea>
-                <button type="submit"
-                  class="py-3 px-8 font-extrabold rounded-md cursor-pointer transition-colors duration-300"
-                  style="background: var(--secondary-color); color: var(--dark-text);"
-                  onmouseover="this.style.background='var(--brand-blue)'; this.style.color='var(--light-text)';"
-                  onmouseout="this.style.background='var(--secondary-color)'; this.style.color='var(--dark-text)';">Send
-                  Message</button>
+                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full focus:outline-none focus:ring-2 focus:ring-orange/50 transition" />
+                <textarea id="message" name="message" placeholder="Your Message" required
+                  class="p-4 mb-5 border border-gray-300 rounded-md text-base w-full min-h-[150px] resize-y focus:outline-none focus:ring-2 focus:ring-orange/50 transition"></textarea>
+                <button type="button" onclick="sendToWhatsapp()"
+                  class="py-4 px-8 font-bold rounded-lg cursor-pointer transition-all duration-300 flex items-center justify-center space-x-2 text-white bg-green-500 hover:bg-green-600 active:bg-green-700 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                  <span>Send via WhatsApp</span>
+                </button>
               </form>
             </div>
+
+            <script>
+              function sendToWhatsapp() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                if (!name || !email || !subject || !message) {
+                  alert('Please fill in all fields before sending.');
+                  return;
+                }
+
+                // Concatenate the user's information
+                const fullMessage = `*New Contact Inquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
+
+                // Encode the message for the URL
+                const encodedMessage = encodeURIComponent(fullMessage);
+
+                // WhatsApp Phone Number (International format without +)
+                const phoneNumber = "256774310287";
+
+                // Open WhatsApp
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+              }
+            </script>
           </div>
+
 
         </div>
 
