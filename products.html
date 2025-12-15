@@ -318,6 +318,12 @@
     #content {
       display: none;
     }
+
+    .check-icon svg {
+      fill: #f97316;
+    }
+
+    /* Orange checkmarks */
   </style>
 </head>
 
@@ -445,141 +451,215 @@
     </div>
 
 
-    <main class="pt-24">
-      <section
-        class="py-24 pb-20 text-center bg-gradient-to-br from-navy via-purple-900 to-navy text-white relative overflow-hidden">
-        <img src="assets/img/circ.png" alt="Circuit Pattern"
-          class="parallax-bg absolute inset-0 w-full h-full object-cover opacity-40">
-        <div class="relative z-10">
-          <h1 class="text-6xl md:text-8xl font-black mb-6 h-screen font-serif" data-aos>Our Products</h1>
-          <p class="text-xl max-w-3xl mx-auto" data-aos>We supply only trusted global brands with full warranty and
-            local
-            support</p>
-        </div>
-      </section>
+    <main class="pt-24 bg-gradient-to-br from-gray-50 to-white min-h-screen">
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <!-- Main Title -->
+        <h1 class="text-5xl md:text-6xl font-extrabold text-center mb-12" data-aos>
+          <span class="bg-gradient-to-r from-navy to-orange bg-clip-text text-transparent">Our Products</span>
+        </h1>
 
-      <section id="products-section" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-          <div class="marquee">
-            <div class="marquee-content flex space-x-8">
-              <!-- Products list duplicated for seamless looping -->
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Computers & Accessories</h3>
+        <!-- Intro Text -->
+        <p class="text-xl text-center text-gray-600 max-w-4xl mx-auto mb-20" data-aos>
+          KAN Innovative Solutions Ltd is proud to have served a wide range of respected institutions. We supply only
+          trusted global brands with full warranty and local support.
+        </p>
+
+        <!-- Product Sections with Scroll Animations -->
+        <div class="space-y-32">
+
+          <!-- Section 1: Computing -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+            <div class="order-2 lg:order-1">
+              <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Computers & Accessories</h2>
+              <div class="w-20 h-1.5 bg-orange mb-6 rounded-full"></div>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Empower your institution with high-performance computing solutions. From robust desktops and laptops for
+                labs to specialized workstations for staff, we provide reliable hardware that drives productivity.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> High-performance Laptops & Desktops
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> Server Hardware & Racks
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-orange mr-4 text-xl"></i> Peripherals & Accessories
+                </li>
+              </ul>
+            </div>
+            <div class="order-1 lg:order-2 relative group">
+              <div
+                class="absolute -inset-4 bg-orange/20 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
               </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Digital Cameras</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Interactive Screens</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Interactive Whiteboards</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Tablets</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Solar Power Products</h3>
-                <p class="text-center text-gray-500">(Inverters, Batteries)</p>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Power Backup Solutions</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Digital Signage</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">VoIP PBX Solutions</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Printers</h3>
-              </div>
-              <!-- Duplicate set for smooth animation -->
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Computers & Accessories</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Digital Cameras</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Interactive Screens</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Interactive Whiteboards</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Tablets</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Solar Power Products</h3>
-                <p class="text-center text-gray-500">(Inverters, Batteries)</p>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Power Backup Solutions</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Digital Signage</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">VoIP PBX Solutions</h3>
-              </div>
-              <div class="bg-white rounded-3xl p-10 shadow-xl flex-shrink-0 w-80">
-                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 mx-auto mb-6"></div>
-                <h3 class="text-xl font-bold text-center">Printers</h3>
-              </div>
+              <img src="https://t3.ftcdn.net/jpg/12/04/56/96/360_F_1204569645_lOd1Uutg9p0eM3418q6yRLrF0sa2FNz2.jpg"
+                alt="Computers"
+                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Footer (same) -->
-      <footer class="bg-navy text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-          <div><img src="assets/img/logo.png" class="h-14 mb-6" />
-            <p>Delivering world-class technology solutions across Uganda and East Africa.</p>
+          <!-- Section 2: Interactive Learning -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+            <div class="order-1 relative group">
+              <div
+                class="absolute -inset-4 bg-blue-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+              </div>
+              <img
+                src="https://cdn.prometheanworld.com/wp-content/uploads/2021/12/18150443/AP7-Ti-Front_1172559673_0721v1-1.png"
+                alt="Interactive Screens"
+                class="relative rounded-2xl shadow-2xl w-full object-contain h-80 lg:h-96 bg-white p-4 transform group-hover:scale-[1.01] transition duration-500">
+            </div>
+            <div class="order-2">
+              <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Interactive Screens & Whiteboards
+              </h2>
+              <div class="w-20 h-1.5 bg-blue-600 mb-6 rounded-full"></div>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Transform the classroom experience with cutting-edge interactive displays. Foster engagement and
+                collaboration with touch-enabled screens designed for modern education.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> 4K Ultra HD Touch Displays
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> Smart Whiteboards
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-blue-600 mr-4 text-xl"></i> Education Software Integration
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4 class="font-bold text-yellow mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="about.html" class="hover:text-orange">About</a></li>
-              <li><a href="services.html" class="hover:text-orange">Services</a></li>
-              <li><a href="products.html" class="hover:text-orange">Products</a></li>
-            </ul>
+
+          <!-- Section 3: Power Solutions -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+            <div class="order-2 lg:order-1">
+              <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Solar & Power Backup</h2>
+              <div class="w-20 h-1.5 bg-green-600 mb-6 rounded-full"></div>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Ensure uninterrupted operations with our green energy solutions. We provide robust solar systems and
+                high-capacity battery backups to keep your lights on and systems running.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> Solar Inverters & Panels
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> Deep Cycle Batteries
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-green-600 mr-4 text-xl"></i> UPS Power Backup Systems
+                </li>
+              </ul>
+            </div>
+            <div class="order-1 lg:order-2 relative group">
+              <div
+                class="absolute -inset-4 bg-green-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+              </div>
+              <img src="https://artisanelectricinc.com/wp-content/uploads/2017/12/battery-backup-lines.png"
+                alt="Solar Power"
+                class="relative rounded-2xl shadow-2xl w-full object-contain h-80 lg:h-96 bg-white p-4 transform group-hover:scale-[1.01] transition duration-500">
+            </div>
           </div>
-          <div>
-            <h4 class="font-bold text-yellow mb-4">Contact</h4>
-            <p>Kyambogo Lower Estate Plot 5,<br>Essex Gardens, Kampala<br>+256 774 310
-              287<br>sales@kaninnovativesolutions.com</p>
+
+          <!-- Section 4: Digital Signage -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+            <div class="order-1 relative group">
+              <div
+                class="absolute -inset-4 bg-purple-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+              </div>
+              <img
+                src="https://abovealladvertising.net/wp/wp-content/uploads/2019/10/Custom-Digital-Signage-Screens.jpg"
+                alt="Digital Signage"
+                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
+            </div>
+            <div class="order-2">
+              <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">Digital Signage & Display</h2>
+              <div class="w-20 h-1.5 bg-purple-600 mb-6 rounded-full"></div>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Communicate effectively with dynamic digital signage. Perfect for lobbies, hallways, and outdoor spaces
+                to share announcements, news, and branding.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Indoor & Outdoor LED Videowalls
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Digital Kiosks
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-purple-600 mr-4 text-xl"></i> Content Management Systems
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4 class="font-bold text-yellow mb-4">Follow Us</h4>
-            <div class="flex space-x-4 text-3xl"><a href="#" class="hover:text-orange transition"><i
-                  class="fab fa-facebook"></i></a><a href="#" class="hover:text-orange transition"><i
-                  class="fab fa-twitter"></i></a><a href="#" class="hover:text-orange transition"><i
-                  class="fab fa-linkedin"></i></a></div>
+
+          <!-- Section 5: Infrastructure -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos>
+            <div class="order-2 lg:order-1">
+              <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 font-serif">IT Infrastructure & Office</h2>
+              <div class="w-20 h-1.5 bg-red-600 mb-6 rounded-full"></div>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                Build a solid foundation with our comprehensive infrastructure solutions. From crystal-clear
+                communication systems to essential office equipment.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> VoIP PBX Phone Systems
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> Professional Printers & Scanners
+                </li>
+                <li class="flex items-center text-lg font-medium text-navy">
+                  <i class="fas fa-check-circle text-red-600 mr-4 text-xl"></i> High-End Digital Cameras
+                </li>
+              </ul>
+            </div>
+            <div class="order-1 lg:order-2 relative group">
+              <div
+                class="absolute -inset-4 bg-red-100 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition duration-500">
+              </div>
+              <img
+                src="https://images.stockcake.com/public/c/0/b/c0bb964e-607f-49fe-9ed6-0367fa9b1c7e_large/futuristic-data-center-stockcake.jpg"
+                alt="Infrastructure"
+                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 lg:h-96 transform group-hover:scale-[1.01] transition duration-500">
+            </div>
           </div>
+
         </div>
-        <div class="text-center mt-12 text-sm">© 2024 KAN Innovative Solutions Ltd. All rights reserved.</div>
-      </footer>
+
+      </section>
+    </main>
+
+    <!-- Footer (same) -->
+    <footer class="bg-navy text-white py-16">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+        <div><img src="assets/img/logo.png" class="h-14 mb-6" />
+          <p>Delivering world-class technology solutions across Uganda and East Africa.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-yellow mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-orange">About</a></li>
+            <li><a href="services.html" class="hover:text-orange">Services</a></li>
+            <li><a href="products.html" class="hover:text-orange">Products</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-yellow mb-4">Contact</h4>
+          <p>Kyambogo Lower Estate Plot 5,<br>Essex Gardens, Kampala<br>+256 774 310
+            287<br>sales@kaninnovativesolutions.com</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-yellow mb-4">Follow Us</h4>
+          <div class="flex space-x-4 text-3xl"><a href="#" class="hover:text-orange transition"><i
+                class="fab fa-facebook"></i></a><a href="#" class="hover:text-orange transition"><i
+                class="fab fa-twitter"></i></a><a href="#" class="hover:text-orange transition"><i
+                class="fab fa-linkedin"></i></a></div>
+        </div>
+      </div>
+      <div class="text-center mt-12 text-sm">© 2024 KAN Innovative Solutions Ltd. All rights reserved.</div>
+    </footer>
   </div>
 
   <script>
@@ -591,73 +671,42 @@
 
     // Function to initialize animations after content is visible
     function initAnimations() {
-      // Parallax Effects
-      gsap.utils.toArray('.parallax-bg').forEach(bg => {
-        gsap.to(bg, {
-          yPercent: 20, // Move background slower
-          ease: "none",
-          scrollTrigger: {
-            trigger: bg.parentElement,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        });
-      });
-
       // Staggered Reveal for Sections
-      // Automatically finds lists/grids and staggers them
       const staggerGroups = document.querySelectorAll('.grid, .space-y-4, .feature-list');
       staggerGroups.forEach(group => {
-        // Get direct children
         const children = group.children;
         if (children.length > 0) {
           gsap.from(children, {
             scrollTrigger: {
               trigger: group,
-              start: "top 85%",
+              start: "top 95%",
               toggleActions: "play none none reverse"
             },
-            y: 50,
+            y: 30,
             opacity: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out"
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
           });
         }
       });
 
-      // Enhanced Single Element Reveal (keeping data-aos)
-      gsap.utils.toArray('[data-aos]').forEach(el => {
-        gsap.from(el, {
-          scrollTrigger: { trigger: el, start: "top 85%" },
-          y: 60,
-          opacity: 0,
-          duration: 1.2,
-          ease: "power4.out"
+      // Enhanced Single Element Reveal
+      const aosElements = document.querySelectorAll('[data-aos]');
+      if (aosElements.length > 0) {
+        gsap.utils.toArray(aosElements).forEach(el => {
+          gsap.from(el, {
+            scrollTrigger: { trigger: el, start: "top 95%" },
+            y: 40,
+            opacity: 0,
+            duration: 1.0,
+            ease: "power3.out"
+          });
         });
-      });
+      }
 
       ScrollTrigger.refresh();
     }
-
-    // Marquee Intersection Observer
-    const marquee = document.querySelector('.marquee-content');
-    const productsSection = document.getElementById('products-section');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          marquee.classList.add('scrolling');
-        } else {
-          marquee.classList.remove('scrolling');
-        }
-      });
-    }, {
-      threshold: 0.1 // Triggers when 10% of the element is visible
-    });
-
-    observer.observe(productsSection);
   </script>
   <!-- Mobile menu JS -->
   <script>

@@ -515,6 +515,98 @@
         </div>
       </section>
 
+      <section class="py-10 bg-white border-b border-gray-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
+          <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Trusted by Industry Leaders</p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative flex overflow-x-hidden group">
+          <div class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
+            <!-- Original Logos -->
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+
+            <!-- Duplicates for seamless loop -->
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+          </div>
+
+          <div class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
+            <!-- Double Duplicate for smoothness if needed, or just let CSS handle it. 
+                  Actually, standardized CSS marquee usually requires two identical sets sliding. 
+             -->
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU"
+              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+          </div>
+        </div>
+
+        <style>
+          .animate-marquee {
+            animation: marquee 40s linear infinite;
+          }
+
+          .animate-marquee2 {
+            animation: marquee2 40s linear infinite;
+          }
+
+          @keyframes marquee {
+            0% {
+              transform: translateX(0%);
+            }
+
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+
+          @keyframes marquee2 {
+            0% {
+              transform: translateX(100%);
+            }
+
+            100% {
+              transform: translateX(0%);
+            }
+          }
+        </style>
+      </section>
+
       <!-- Quick Stats -->
       <section class="py-20 bg-gray-50" id="quick-stats-section">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
