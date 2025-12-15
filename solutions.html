@@ -414,7 +414,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/smart-classroom.jpg" alt="Smart School" class="object-cover w-full h-full rounded-lg">
+            <img src="assets/img/board.avif" alt="Smart School" class="object-cover w-full h-full rounded-lg">
           </div>
 
           <div class="solution-content flex-1 px-6 md:px-10">
@@ -449,7 +449,7 @@
         <div
           class="solution-block flex flex-col md:flex-row-reverse items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/video-conference.jpg" alt="Video Conference"
+            <img src="assets/img/board2.webp" alt="Video Conference"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -483,7 +483,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/industry-solutions.jpg" alt="Industry Solutions"
+            <img src="assets/img/ass.webp" alt="Industry Solutions"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -600,6 +600,23 @@
           opacity: 0,
           duration: 1.2,
           ease: "power4.out"
+        });
+      });
+
+      // Image Morphing Animation
+      gsap.utils.toArray(".solution-image").forEach((imgContainer) => {
+        const img = imgContainer.querySelector("img");
+        gsap.set(img, { clipPath: "circle(0% at 50% 50%)" });
+
+        gsap.to(img, {
+          clipPath: "circle(75% at 50% 50%)",
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: imgContainer,
+            start: "top center+=100",
+            end: "bottom center",
+            scrub: 1,
+          },
         });
       });
 

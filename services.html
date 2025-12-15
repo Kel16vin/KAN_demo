@@ -434,7 +434,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/digital-content.jpg" alt="Digital Content"
+            <img src="assets/img/kids_tech.png" alt="Digital Content"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -468,7 +468,7 @@
         <div
           class="solution-block flex flex-col md:flex-row-reverse items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/coding-robotics.jpg" alt="Coding & Robotics"
+            <img src="assets/img/Tesla_Optimus.jpg" alt="Coding & Robotics"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -502,7 +502,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/software-dev.jpg" alt="Software Development"
+            <img src="assets/img/code.jpg" alt="Software Development"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -535,7 +535,7 @@
         <div
           class="solution-block flex flex-col md:flex-row-reverse items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/cloud-services.jpg" alt="Cloud Services" class="object-cover w-full h-full rounded-lg">
+            <img src="assets/img/server.jpg" alt="Cloud Services" class="object-cover w-full h-full rounded-lg">
           </div>
 
           <div class="solution-content flex-1 px-6 md:px-10">
@@ -569,7 +569,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/consultancy.jpg" alt="Consultancy Services"
+            <img src="assets/img/consult.jpg" alt="Consultancy Services"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -602,7 +602,7 @@
         <div
           class="solution-block flex flex-col md:flex-row-reverse items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/training.jpg" alt="Management & Training"
+            <img src="assets/img/manager.jpg" alt="Management & Training"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -634,7 +634,7 @@
         <div
           class="solution-block flex flex-col md:flex-row items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/hr-outsourcing.jpg" alt="HR IT Outsourcing"
+            <img src="assets/img/out.png" alt="HR IT Outsourcing"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -666,7 +666,7 @@
         <div
           class="solution-block flex flex-col md:flex-row-reverse items-center text-left mb-10 p-10 rounded-lg shadow-md bg-white">
           <div class="solution-image min-w-[400px] h-[300px] bg-gray-200 rounded-lg flex items-center justify-center">
-            <img src="assets/img/support.jpg" alt="Technical Support & Maintenance"
+            <img src="assets/img/maintain.jpg" alt="Technical Support & Maintenance"
               class="object-cover w-full h-full rounded-lg">
           </div>
 
@@ -802,6 +802,23 @@
           opacity: 0,
           duration: 1.2,
           ease: "power4.out"
+        });
+      });
+
+      // Image Morphing Animation
+      gsap.utils.toArray(".solution-image").forEach((imgContainer) => {
+        const img = imgContainer.querySelector("img");
+        gsap.set(img, { clipPath: "circle(0% at 50% 50%)" });
+
+        gsap.to(img, {
+          clipPath: "circle(75% at 50% 50%)",
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: imgContainer,
+            start: "top center+=100",
+            end: "bottom center",
+            scrub: 1,
+          },
         });
       });
 
