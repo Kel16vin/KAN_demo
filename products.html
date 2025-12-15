@@ -103,18 +103,6 @@
       /* backdrop-blur-md */
       -webkit-backdrop-filter: blur(8px);
       /* For Safari */
-      /*
-        NOTE: You need to create 'assets/img/circuit-pattern.png'.
-        This image should be a seamlessly tileable circuit board pattern.
-        For example, a small (e.g., 100x100px) transparent PNG with white circuit lines.
-      */
-      background-image: url('assets/img/circuit-pattern.png');
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-blend-mode: overlay;
-      /* Blend mode for the pattern */
-      background-size: contain;
-      /* Zooms in and fits within the nav height */
     }
 
     .hover-underline-grow::after {
@@ -254,24 +242,23 @@
 
     .orange-bar {
       position: absolute;
-      width: 250px;
-      height: 80px;
+      width: 80px;
+      height: 30px;
       background-color: #ff9900;
-      border-radius: 10px;
+      border-radius: 9999px; /* Fully rounded */
       z-index: 1;
       top: 50%;
       left: 50%;
-      transform: translate(calc(-50% - 75px), -50%);
+      transform: translate(-100%, -50%);
     }
 
     .spinning-ring {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border: 30px solid transparent;
-      border-top: 30px solid #2c2c6c;
-      border-right: 30px solid #2c2c6c;
-      border-bottom: 30px solid #2c2c6c;
+      width: 100px;
+      height: 100px;
+      border: 12px solid transparent;
+      border-top: 12px solid #2c2c6c;
+      border-right: 12px solid #2c2c6c;
+      border-bottom: 12px solid #2c2c6c;
       border-radius: 50%;
       animation: spin 1.5s linear infinite;
       z-index: 2;
