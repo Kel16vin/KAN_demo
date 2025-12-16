@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -47,32 +48,6 @@
   <script src="https://unpkg.com/lenis@1.0.27/dist/lenis.min.js"></script>
 
   <style>
-    .cursor {
-      pointer-events: none;
-      position: fixed;
-      top: -10px;
-      left: -10px;
-      width: 20px;
-      height: 20px;
-      background: #ff6b35;
-      border-radius: 50%;
-      mix-blend-mode: difference;
-      z-index: 9999;
-      transition: transform 0.1s;
-    }
-
-    .cursor-follower {
-      pointer-events: none;
-      position: fixed;
-      top: -30px;
-      left: -30px;
-      width: 60px;
-      height: 60px;
-      border: 2px solid #ff6b35;
-      border-radius: 50%;
-      z-index: 9998;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
 
     .magnetic {
       transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -380,9 +355,7 @@
   </div>
 
   <div id="content">
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/256774310287" target="_blank"
@@ -566,57 +539,20 @@
         <div class="relative flex overflow-x-hidden group">
           <div
             class="py-12 animate-marquee whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
-            <!-- Original Logos -->
-            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/stmarys.png" alt="St Marys"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/drc-logo-1.png" alt="DRC"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/img/eapil.png" alt="EAPIL"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/isu.png" alt="ISU"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-
-            <!-- Duplicates for seamless loop -->
-            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/stmarys.png" alt="St Marys"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/drc-logo-1.png" alt="DRC"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/img/eapil.png" alt="EAPIL"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/isu.png" alt="ISU"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
           </div>
 
           <div
-            class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
-            <!-- Double Duplicate for smoothness if needed, or just let CSS handle it. 
-                  Actually, standardized CSS marquee usually requires two identical sets sliding. 
-             -->
-            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/stmarys.png" alt="St Marys"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/drc-logo-1.png" alt="DRC"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/img/eapil.png" alt="EAPIL"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/isu.png" alt="ISU"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-
-            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/stmarys.png" alt="St Marys"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/drc-logo-1.png" alt="DRC"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/img/eapil.png" alt="EAPIL"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
-            <img src="assets/clients/isu.png" alt="ISU"
-              class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            class="absolute top-0 left-0 py-12 animate-marquee2 whitespace-nowrap flex items-center space-x-48 group-hover:[animation-play-state:paused]">
+            <img src="assets/clients/nabisunsa.png" alt="Nabisunsa" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/stmarys.png" alt="St Marys" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/drc-logo-1.png" alt="DRC" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/img/eapil.png" alt="EAPIL" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
+            <img src="assets/clients/isu.png" alt="ISU" class="h-24 w-auto grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300">
           </div>
         </div>
 
@@ -1230,17 +1166,15 @@
   <!-- Scripts (same on every page) -->
   <script>
 
-    const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    if (window.Lenis) {
+      const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    } else {
+      console.warn('Lenis not loaded; smooth scroll disabled.');
+    }
 
-    // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
-    document.addEventListener('mousemove', e => {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
+    // Custom cursor removed
 
     // Magnetic buttons
     document.querySelectorAll('.magnetic').forEach(btn => {
@@ -1289,7 +1223,9 @@
         });
       }
 
-      ScrollTrigger.refresh();
+      if (window.ScrollTrigger && typeof ScrollTrigger.refresh === 'function') {
+        ScrollTrigger.refresh();
+      }
     }
 
 
